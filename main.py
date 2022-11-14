@@ -14,23 +14,24 @@ class Dog(Animal):
     def cout(self):
         print("This is a dog")
 
-#Part 1
-a1 = Animal(4, 6)
-a2 = Dog(4, 6)
-print(str(a1.width) + " " + str(a1.height))
-print(str(a2.width) + " " + str(a2.height))
-
-#Part 2
 class Cat(Animal):
     def __init__(self):
         print("Constructing cat")
     def cout(self):
         print("This is a cat")
 
+#Part 1
+a3 = Animal(4, 6)
+a4 = Dog(4, 6)
+print(str(a3.width) + " " + str(a3.height)) #4, 6
+print(str(a4.width) + " " + str(a4.height)) #6, 12 (used Dog)
+
 a1 = Dog()
-a2 = Cat()
-Animal.cout(a2)
+a2 = Cat() #cout of Cat by default
+Animal.cout(a2) #cout of Animal instead of Cat
 a2.cout()
+
+#Part 2
 print(str(issubclass(Cat, Animal))) #True, Cat is a subclass of Animal
 print(str(issubclass(Animal, Cat))) #False, Animal is not a subclass of Animal
 print(str(isinstance(a1, Animal))) #True, a1 is a Dog, which is an Animal
